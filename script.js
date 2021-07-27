@@ -1,5 +1,10 @@
 // define instruments of the game
+// safe to rename, must capitalize first letter
 const weapons = ['Rock', 'Paper', 'Scissors'];
+
+const ROCK = weapons[0];
+const PAPER = weapons[1];
+const SCISSORS = weapons[2];
 
 //randomly return the computer's choice
 function computerPlay() {
@@ -10,7 +15,7 @@ function computerPlay() {
 
 //return the player's choice using input prompt
 function promptPlayer() {
-   let input = prompt('Rock, Paper or Scissors?');
+   let input = prompt(`${ROCK}, ${PAPER} or ${SCISSORS}?`);
    let playerChoice = input
       .toUpperCase()
       .slice(0,1)
@@ -37,30 +42,30 @@ function playRound() {
       return 0
    } 
    //handle mismatched outcomes
-   else if (computerSelection === 'Rock') {
-      if (playerSelection === 'Paper') {
-         console.log('You Win, Paper beats Rock.');
+   else if (computerSelection === ROCK) {
+      if (playerSelection === PAPER) {
+         console.log(`You Win, ${PAPER} beats ${ROCK}.`);
          return 1;
       } else {
-         console.log('You Lose, Rock beats Scissors.');
+         console.log(`You Lose, ${ROCK} beats ${SCISSORS}.`);
          return -1;
       }
    } 
-   else if (computerSelection === 'Paper') {
-      if (playerSelection === 'Scissors') {
-         console.log('You Win, Scissors beats Paper.');
+   else if (computerSelection === PAPER) {
+      if (playerSelection === SCISSORS) {
+         console.log(`You Win, ${SCISSORS} beats ${PAPER}.`);
          return 1;
       } else {
-         console.log('You Lose, Paper beats Rock.');
+         console.log(`You Lose, ${PAPER} beats ${ROCK}.`);
          return -1;
       }
    } 
-   else if (computerSelection === 'Scissors') {
-      if (playerSelection === 'Rock') {
-         console.log('You Win, Rock beats Scissors.');
+   else if (computerSelection === SCISSORS) {
+      if (playerSelection === ROCK) {
+         console.log(`You Win, ${ROCK} beats ${SCISSORS}.`);
          return 1;
       } else {
-         console.log('You Lose, Scissors beats Paper.');
+         console.log(`You Lose, ${SCISSORS} beats ${PAPER}.`);
          return -1;
       }
    }
