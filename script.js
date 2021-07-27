@@ -73,12 +73,12 @@ function game(gameLength) {
       wins += playRound();
    }
    if (wins === 0) {
-      console.log(`Game of ${gameLength} matches ends in a tie.`); 
+      console.log(`The ${gameLength} match game ends in a tie.`); 
       return;
    } else if (wins > 0) {
       console.log(`Victory!! You won by ${wins} matches!`);
       return;
    } else {
-      console.log(`Defeat! You lost by ${wins} matches.`);
+      console.log(`Defeat! You lost by ${wins * -1} matches.`);
    }
 }
