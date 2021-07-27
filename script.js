@@ -24,25 +24,44 @@ function promptPlayer() {
    return playerChoice
 }
 
+function playRound() {
+   const playerSelection = promptPlayer();
+   const computerSelection = computerPlay();
+   
+   //handle matched outcomes
    if (playerSelection === computerSelection) {
-      return `Tie, both players chose ${playerSelection}.`
-   } else if (computerSelection === 'Rock') {
+      console.log(`Tie, both players chose ${playerSelection}.`);
+      return 0
+   } 
+   //handle mismatched outcomes
+   else if (computerSelection === 'Rock') {
       if (playerSelection === 'Paper') {
-         return 'You Win, Paper beats Rock.'
+         console.log('You Win, Paper beats Rock.');
+         return 1;
       } else {
-         return 'You Lose, Rock beats Scissors.'
+         console.log('You Lose, Rock beats Scissors.');
+         return -1;
       }
-   } else if (computerSelection === 'Paper') {
+   } 
+   else if (computerSelection === 'Paper') {
       if (playerSelection === 'Scissors') {
-         return 'You Win, Scissors beats Paper.'
+         console.log('You Win, Scissors beats Paper.');
+         return 1;
       } else {
-         return 'You Lose, Paper beats Rock.'
+         console.log('You Lose, Paper beats Rock.');
+         return -1;
       }
-   } else if (computerSelection === 'Scissors') {
+   } 
+   else if (computerSelection === 'Scissors') {
       if (playerSelection === 'Rock') {
-         return 'You Win, Rock beats Scissors.'
+         console.log('You Win, Rock beats Scissors.');
+         return 1;
       } else {
-         return 'You Lose, Scissors beats Paper.'
+         console.log('You Lose, Scissors beats Paper.');
+         return -1;
       }
+   }
+}
+
    }
 }
