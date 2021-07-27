@@ -7,8 +7,23 @@ function computerPlay() {
    return weapons[randomNumber];
 }
 
-function playRound(playerSelection, computerSelection) {
-   //handle tie
+function promptPlayer() {
+   let input = prompt('Rock, Paper or Scissors?');
+   let playerChoice = input
+      .toUpperCase()
+      .slice(0,1)
+      .concat(input
+         .toLowerCase()
+         .slice(1)
+      );
+   if (!weapons.includes(playerChoice)) {
+         promptPlayer();
+         return;
+      }
+   console.log(`Player chooses ${playerChoice}`);
+   return playerChoice
+}
+
    if (playerSelection === computerSelection) {
       return `Tie, both players chose ${playerSelection}.`
    } else if (computerSelection === 'Rock') {
