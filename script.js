@@ -64,5 +64,19 @@ function playRound() {
    }
 }
 
+function game(gameLength) {
+   let wins = 0;
+   for (let i = 0; i < gameLength; i++) {
+      wins += playRound();
+   }
+   if (wins === 0) {
+      console.log(`Game of ${gameLength} matches ends in a tie.`); 
+      return;
+   } else if (wins > 0) {
+      console.log(`Victory!! You won by ${wins} matches!`);
+      return;
+   } else {
+      console.log(`Defeat! You lost by ${wins} matches.`);
    }
 }
+
