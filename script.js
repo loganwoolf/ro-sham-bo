@@ -87,3 +87,7 @@ function game(gameLength) {
       console.log(`Defeat! You lost by ${wins * -1} matches.`);
    }
 }
+
+
+const playButtons = document.querySelectorAll('.button__play');
+playButtons.forEach((button, i) => {button.textContent = weapons[i];});
