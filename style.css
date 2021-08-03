@@ -8,8 +8,9 @@ body {
    background: url(https://www.portablepress.com/wp-content/uploads/2017/11/Rock-Paper-Scissors.jpg) top center/cover no-repeat;
    display: flex;
    flex-direction: column;
-   /* justify-content: center; */
+   justify-content: center;
    align-items: center;
+   text-align: center;
 }
 .game {
    background-color: #0003;
@@ -19,6 +20,7 @@ body {
    box-shadow: 0 0 45px grey;
    display: flex;
    flex-direction: column;
+   width: 30rem;
 }
 .play-buttons {
    display: flex;
@@ -28,7 +30,7 @@ body {
 .hidden {
    display: none;
 }
-.button:hover {
+.play:hover {
    opacity: 80%;
    transform: scale(1.05);
 }
@@ -66,5 +68,5 @@ body {
 }
 .reset {
    background-color: violet;
-   opacity: 80%;
+   opacity: 60%;
 }
