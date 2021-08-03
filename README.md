@@ -1,5 +1,9 @@
 # Odin Project - Rock Paper Scissors
 
-This is a game to be played entirely from the console.
+This game is an Odin Project project.
 
-Have fun!
+It was originally written for the console, but now has a fully functioning UI.
+
+Cool graphics and transitions are needed to make it fun, but it works wonderfully.
+
+Thanks for checking it out!
