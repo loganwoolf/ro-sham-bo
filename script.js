@@ -70,16 +70,16 @@ function updateScore() {
       playButtons.forEach(btn => btn.classList.toggle('hidden'));
       resetButton.classList.toggle('hidden');
       setTimeout(() => {
-         resetButton.addEventListener('click', reset);
          resetButton.style.opacity = "100%";
+         resetButton.addEventListener('click', reset);
       }, 3000);
    } else if (wins.computer === 5) {
       outcome.textContent = `Computer wins the game!`;
       playButtons.forEach(btn => btn.classList.toggle('hidden'));
       resetButton.classList.toggle('hidden');
       setTimeout(() => {
-         resetButton.addEventListener('click', reset);
          resetButton.style.opacity = "100%";
+         resetButton.addEventListener('click', reset);
       }, 3000);
    } 
 }
@@ -92,7 +92,8 @@ function reset() {
    outcome.textContent = `First to 5 wins`;
    playButtons.forEach(btn => btn.classList.toggle('hidden'));
    resetButton.classList.toggle('hidden');
-   resetButton.removeEventListener('click', reset)
+   resetButton.removeEventListener('click', reset);
+   resetButton.style.opacity = "60%";
 }
 
 
@@ -101,17 +102,17 @@ function handleRoundOutput(e) {
    let roundResult = playRound(e);
    switch (roundResult.outcome) {
       case 0:
-         announcement.textContent = `Tie`;
+         announcement.textContent = `${roundResult.status}`;
          break;
       case -1:
          wins.computer++;
          updateScore();
-         announcement.textContent = `You Lose`;
+         announcement.textContent = `${roundResult.status}`;
          break;
       case 1:
          wins.player++;
          updateScore();
-         announcement.textContent = `You Win`;
+         announcement.textContent = `${roundResult.status}`;
          break;
    }
 }
