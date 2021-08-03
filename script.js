@@ -9,6 +9,7 @@ const SCISSORS = weapons[2];
 let wins = {"player": 0, "computer": 0};
 
 const playButtons = document.querySelectorAll('.play');
+const resetButton = document.querySelector('.reset')
 const announcement = document.querySelector('.announcement');
 const outcome = document.querySelector('.outcome');
 const playerScore = document.querySelector('#player-score');
@@ -66,17 +67,23 @@ function updateScore() {
    computerScore.textContent = wins.computer;
    if (wins.player === 5) {
       outcome.textContent = `Player wins the game!`;
-      playButtons.forEach(btn => btn.disabled = true);
+      playButtons.forEach(btn => btn.classList.toggle('hidden'));
+      resetButton.classList.toggle('hidden');
    } else if (wins.computer === 5) {
       outcome.textContent = `Computer wins the game!`;
-      playButtons.forEach(btn => btn.disabled = true);
+      playButtons.forEach(btn => btn.classList.toggle('hidden'));
+      resetButton.classList.toggle('hidden');
    } 
 }
 
 function reset() {
    wins = {"player": 0, "computer": 0};
-   announcement.textContent = `Care to try again?`
+   playerScore.textContent = wins.player;
+   computerScore.textContent = wins.computer;
+   announcement.textContent = `Choose your weapon...`;
    outcome.textContent = `First to 5 wins`;
+   playButtons.forEach(btn => btn.classList.toggle('hidden'));
+   resetButton.classList.toggle('hidden');
 }
 
 
@@ -98,12 +105,11 @@ function handleRoundOutput(e) {
          announcement.textContent = `You Win`;
          break;
    }
-
 }
 
 playButtons.forEach((button, i) => {button.textContent = weapons[i];});
 playButtons.forEach(button => button.addEventListener('click', handleRoundOutput));
-
+resetButton.addEventListener('click', reset);
 
 
 /* OLD FUNCTIONS NOT NEEDED ANYMORE
