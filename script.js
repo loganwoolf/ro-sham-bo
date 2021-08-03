@@ -69,10 +69,18 @@ function updateScore() {
       outcome.textContent = `Player wins the game!`;
       playButtons.forEach(btn => btn.classList.toggle('hidden'));
       resetButton.classList.toggle('hidden');
+      setTimeout(() => {
+         resetButton.addEventListener('click', reset);
+         resetButton.style.opacity = "100%";
+      }, 3000);
    } else if (wins.computer === 5) {
       outcome.textContent = `Computer wins the game!`;
       playButtons.forEach(btn => btn.classList.toggle('hidden'));
       resetButton.classList.toggle('hidden');
+      setTimeout(() => {
+         resetButton.addEventListener('click', reset);
+         resetButton.style.opacity = "100%";
+      }, 3000);
    } 
 }
 
@@ -84,6 +92,7 @@ function reset() {
    outcome.textContent = `First to 5 wins`;
    playButtons.forEach(btn => btn.classList.toggle('hidden'));
    resetButton.classList.toggle('hidden');
+   resetButton.removeEventListener('click', reset)
 }
 
 
@@ -109,7 +118,7 @@ function handleRoundOutput(e) {
 
 playButtons.forEach((button, i) => {button.textContent = weapons[i];});
 playButtons.forEach(button => button.addEventListener('click', handleRoundOutput));
-resetButton.addEventListener('click', reset);
+
 
 
 /* OLD FUNCTIONS NOT NEEDED ANYMORE
