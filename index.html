@@ -8,34 +8,26 @@
    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   <main style="display: none">
-      <h1>Rock Paper Scissors</h1>
-      <h2>Manual Instructions</h2>
-      <ol>
-         <li>Open the console using</li>
-         <ul>
-            <li><span>F12</span> or</li>
-            <li><span>CTRL + SHIFT + I</span></li>
-         </ul>
-         <li> Type <span>game(n)</span> where
-            <ul>
-               <li><span>n</span> is the number of rounds you would like to play</li>
-            </ul> 
-         </li>
-      </ol>
-      <h3>Good luck and have fun!</h3>
-   </main>
-
-   <div>
-      <button id="rock" class="button__play"></button>
-      <button id="paper" class="button__play"></button>
-      <button id="scissors" class="button__play"></button>
-
-
+   <div class="game">
+      <h1>Rock | Paper | Scissors</h1>
+      <div class="play-buttons">
+         <button id="rock" class="button play"></button>
+         <button id="paper" class="button play"></button>
+         <button id="scissors" class="button play"></button>
+      </div>
+      <h2 class="announcement">Choose your weapon...</h2>
+      <div class="results">
+         <div class="scorecard">
+            <h2>Player</h2>
+            <h2 id="player-score">0</h2>
+			</div>
+         <div class="scorecard">
+            <h2>Computer</h2>
+            <h2 id="computer-score">0</h2>
+			</div>
+      </div>
+		<h2 class="outcome">First to 5 wins</h2>
    </div>
-
-
-
 </body>
 <script src="script.js"></script>
 </html>
